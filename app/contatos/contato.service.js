@@ -9,26 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var app_routing_module_1 = require("./app-routing.module");
-var contatos_module_1 = require("./contatos/contatos.module");
-var AppModule = (function () {
-    function AppModule() {
+var contato_mock_1 = require("./contato-mock");
+var ContatoService = (function () {
+    function ContatoService() {
     }
-    return AppModule;
+    ContatoService.prototype.getContatos = function () {
+        return contato_mock_1.CONTATOS;
+    };
+    return ContatoService;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            app_routing_module_1.AppRoutingModule,
-            platform_browser_1.BrowserModule,
-            contatos_module_1.ContatosModule
-        ],
-        declarations: [app_component_1.AppComponent],
-        bootstrap: [app_component_1.AppComponent],
-    }),
+ContatoService = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], ContatoService);
+exports.ContatoService = ContatoService;
+//# sourceMappingURL=contato.service.js.map

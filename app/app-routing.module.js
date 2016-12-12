@@ -9,26 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var app_routing_module_1 = require("./app-routing.module");
-var contatos_module_1 = require("./contatos/contatos.module");
-var AppModule = (function () {
-    function AppModule() {
+var router_1 = require("@angular/router");
+var appRoutes = [
+    {
+        path: '',
+        redirectTo: '/contato',
+        pathMatch: 'full',
     }
-    return AppModule;
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
+    }
+    return AppRoutingModule;
 }());
-AppModule = __decorate([
+AppRoutingModule = __decorate([
     core_1.NgModule({
         imports: [
-            app_routing_module_1.AppRoutingModule,
-            platform_browser_1.BrowserModule,
-            contatos_module_1.ContatosModule
+            router_1.RouterModule.forRoot(appRoutes)
         ],
-        declarations: [app_component_1.AppComponent],
-        bootstrap: [app_component_1.AppComponent],
+        exports: [
+            router_1.RouterModule
+        ]
     }),
     __metadata("design:paramtypes", [])
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], AppRoutingModule);
+exports.AppRoutingModule = AppRoutingModule;
+//# sourceMappingURL=app-routing.module.js.map

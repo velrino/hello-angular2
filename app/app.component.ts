@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
+    moduleId    : module.id,
     selector    : 'my-app',
-    template    : `
-    <h1> Hello Angular2 ! </h1>
-    <button class="btn btn-success"> Hello Bootstrap </button>
-    `
+    templateUrl    : 'app.component.html',
 })
 
 export class AppComponent 
